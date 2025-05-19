@@ -1,0 +1,121 @@
+
+body {
+  background: #000;
+  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 50vh; */
+  background-color: white;
+  }
+
+.calculator {
+  width: 350px;
+  background: #1c1c1c;
+  border-radius: 40px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+  background: black;
+  color: white;
+  font-size: 2.5em;
+  text-align: right;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  min-height: 50px;
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  text-align: center;
+}
+
+
+button {
+  padding: 5px;
+  font-size: 1.4em;
+  border: none;
+  border-radius: 50%;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #696868;
+}
+
+/* Special styling for operators and functions */
+button:nth-child(4n) {
+  background: #ff9500;
+  color: white;
+}
+
+button:nth-child(-n+4) {
+  background: #a5a5a5;
+  color: black;
+}
+.light {
+  background: #f4f4f4;
+}
+
+.light .display {
+  background: #fff;
+  color: #000;
+}
+
+.light button {
+  background: #e0e0e0;
+  color: black;
+}
+
+.light button:nth-child(4n) {
+  background: #ff9500;
+  color: white;
+}
+
+.mode-toggle {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 1.2em;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+}
+.history {
+  font-size: 0.8em;
+  color: #bbb;
+  max-height: 100px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.history-item {
+  padding: 2px 0;
+}
+@media (max-width: 400px) {
+  .calculator {
+    width: 90vw;
+    padding: 15px;
+    border-radius: 30px;
+  }
+
+  .display {
+    font-size: 1.8em;
+    padding: 15px;
+  }
+
+  button {
+    padding: 16px;
+    font-size: 1em;
+  }
+}
+
