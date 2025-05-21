@@ -118,4 +118,26 @@ button:nth-child(-n+4) {
     font-size: 1em;
   }
 }
+.equal-button {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.equal-button button {
+  width: 90%;
+  padding: 20px;
+  font-size: 1.8em;
+  background: green;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.equal-button button:hover {
+  background: rgb(119, 192, 119);
+}
+
 
