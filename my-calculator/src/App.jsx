@@ -52,6 +52,19 @@ const handleEqual = () => {
       setInput((prev) => (prev.charAt(0) === "-" ? prev.slice(1) : "-" + prev));
       return;
     }
+    if (value === "%") {
+    try {
+      const lastNum = input.match(/(\d+\.?\d*)$/);
+      if (lastNum) {
+        const num = parseFloat(lastNum[0]);
+        const percent = num / 100;
+        setInput(input.replace(/(\d+\.?\d*)$/, percent.toString()));
+      }
+    } catch {
+      setInput("Error");
+    }
+    return;
+  }
 
     setInput((prev) => prev + value);
   };
@@ -90,9 +103,14 @@ const handleEqual = () => {
         })}
       </div>
     
-  <button className="mode-toggle" onClick={toggleMode}>
-    {darkMode ? "☀️" : "🌙"}
-  </button>
+  <div className="equal-button">
+  <button onClick={handleEqual}>=</button>
+</div>
+
+<button className="mode-toggle" onClick={toggleMode}>
+  {darkMode ? "☀️ Light" : "🌙 Dark"}
+</button>
+
 </div>
 
     
